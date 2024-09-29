@@ -72,105 +72,250 @@ public class Logic1 {
 
     // ONLY EDIT BELOW HERE-------------------------------------------------------------------------
 
-    public boolean old35(int n) {
-        return (n % 3 == 0) ^ (n % 5 == 0); // Return true if a multiple of 3 or 5, but not both
+      public boolean old35(int n) {
+        if (n%3 == 0 && n%5 == 0) {
+            return false;
+        }
+        else if (n%3 == 0 || n%5 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public boolean specialEleven(int n) {
-        return (n % 11 == 0) || (n % 11 == 1); // Return true if multiple of 11 or one more than a multiple
+   public boolean specialEleven(int n) {
+        if (n%11 == 0 || n%11 == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public boolean more20(int n) {
-        return (n % 20 == 1) || (n % 20 == 2); // Return true if 1 or 2 more than a multiple of 20
+     public boolean more20(int n) {
+        if (n%20 == 1 || n%20 == 2) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public boolean less20(int n) {
-        return (n % 20 == 19) || (n % 20 == 18); // Return true if 1 or 2 less than a multiple of 20
+        if (n%20 == 19 || n%20 == 18) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public boolean nearTen(int num) {
-        return (num % 10 <= 2) || (num % 10 >= 8); // Return true if within 2 of a multiple of 10
+   public boolean nearTen(int num) {
+        if (num % 10 <= 2 || num % 10 >= 8) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public int sortaSum(int a, int b) {
         int sum = a + b;
-        return (sum >= 10 && sum < 20) ? 20 : sum; // Return sum or 20 if in the range 10..19
-    }
-
-    public boolean in1To10(int n, boolean outsideMode) {
-        return (outsideMode) ? (n <= 1 || n >= 10) : (n >= 1 && n <= 10); // Check range based on outsideMode
-    }
-
-    public int teenSum(int a, int b) {
-        return ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) ? 19 : (a + b); // Return sum or 19 if any is teen
-    }
-
-    public boolean love6(int a, int b) {
-        return (a == 6 || b == 6 || (a + b) == 6 || Math.abs(a - b) == 6); // Check if love for number 6
-    }
-
-    public boolean lastDigit(int a, int b, int c) {
-        return (a % 10 == b % 10) || (b % 10 == c % 10) || (a % 10 == c % 10); // Check last digits
-    }
-
-    public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-        return !(isAsleep || (isMorning && !isMom)); // Determine if the phone should be answered
-    }
-
-    public String alarmClock(int day, boolean vacation) {
-        if (vacation) {
-            return (day == 0 || day == 6) ? "off" : "10:00"; // Alarm settings based on vacation
+        if (sum >=10 && sum < 20) {
+            sum = 20;
         }
-        return (day == 0 || day == 6) ? "10:00" : "7:00"; // Regular alarm settings
+        return sum;
     }
 
-    public int teaParty(int tea, int candy) {
-        if (tea < 5 || candy < 5) return 0; // Bad party if either is less than 5
-        if (tea >= 2 * candy || candy >= 2 * tea) return 2; // Great party if one is double the other
-        return 1; // Good party
+        public boolean in1To10(int n, boolean outsideMode) {
+        if (outsideMode == true) {
+            if (n <= 1 || n >= 10) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if (n >= 1 && n <= 10) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     }
 
-    public int redTicket(int a, int b, int c) {
-        if (a == 2 && b == 2 && c == 2) return 10; // All twos
-        if (a == b && b == c) return 5; // All same
-        if (a != b && a != c) return 1; // All different
-        return 0; // Otherwise
+     public int teenSum(int a, int b) {
+        if ((a>=13 && a<=19) || (b>=13 && b<=19)) {
+            return 19;
+        }
+        else {
+            return a + b;
+        }
     }
 
-    public int greenTicket(int a, int b, int c) {
-        if (a == b && b == c) return 20; // All the same
-        if (a == b || b == c || a == c) return 10; // Two are the same
-        return 0; // All different
+     public boolean love6(int a, int b) {
+        if (a==6 || b==6 || (a+b)==6 || Math.abs(a-b)==6) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public boolean squirrelPlay(int temp, boolean isSummer) {
-        int upper = isSummer ? 100 : 90; // Set upper limit based on summer
-        return (temp >= 60 && temp <= upper); // Check if squirrels can play
+
+     public boolean lastDigit(int a, int b, int c) {
+        if (a%10 == b%10 || b%10 == c%10 || a%10 == c%10) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public int caughtSpeeding(int speed, boolean isBirthday) {
-        if (isBirthday) speed -= 5; // Adjust speed for birthday
-        if (speed <= 60) return 0; // No ticket
-        if (speed <= 80) return 1; // Small ticket
-        return 2; // Big ticket
+       public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+        if ((isAsleep == true) || (isMorning == true && isMom == false)) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
-    public int dateFashion(int you, int date) {
-        if (you <= 2 || date <= 2) return 0; // Bad date if either is 2 or less
-        if (you >= 8 || date >= 8) return 2; // Great date if either is 8 or more
-        return 1; // Good date
+       public String alarmClock(int day, boolean vacation) {
+        if (vacation == true) {
+            if (day == 0 || day == 6) {
+                return "off";
+            }
+            else {
+                return "10:00";
+            }
+        }
+        else {
+            if (day == 0 || day == 6) {
+                return "10:00";
+            }
+            else {
+                return "7:00";
+            }
+        }
     }
 
-    public String fizzString2(int n) {
-        String result = "";
-        if (n % 3 == 0) result += "fizz"; // Add fizz for multiples of 3
-        if (n % 5 == 0) result += "buzz"; // Add buzz for multiples of 5
-        return result.isEmpty() ? n + "!" : result + "!"; // Return fizz, buzz, or number
+       public int teaParty(int tea, int candy) {
+        if (tea < 5 || candy < 5) {
+            return 0;
+        }
+        else if (2*tea <= candy || 2*candy <= tea) {
+            return 2;
+        }
+        else {
+            return 1;
+        }
     }
 
-    public boolean sodaParty(int straws, boolean extra) {
-        return (extra) ? (straws >= 60) : (straws >= 40); // Check if there are enough straws
+       public int redTicket(int a, int b, int c) {
+        if (a==2 && b==2 && c==2) {
+            return 10;
+        }
+        else if (a==b && b==c) {
+            return 5;
+        }
+        else if (a!=b && a!=c) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
+
+       public int greenTicket(int a, int b, int c) {
+        if (a==b && b==c) {
+            return 20;
+        }
+        else if (a==b || b==c || a==c) {
+            return 10;
+        }
+        else {
+            return 0;
+        }
+    }
+
+        public boolean squirrelPlay(int temp, boolean isSummer) {
+        int upper = 90;
+        if (isSummer == true) {
+            upper = 100;
+        }
+        if (temp >= 60 && temp <= upper) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+       public int caughtSpeeding(int speed, boolean isBirthday) {
+        if (isBirthday == true) {
+            speed -= 5;
+        }
+        if (speed <= 60) {
+            return 0;
+        }
+        else if (speed <= 80) {
+            return 1;
+        }
+        else {
+            return 2;
+        }
+    }
+
+       public int dateFashion(int you, int date) {
+        if (you <= 2 || date <= 2) {
+            return 0;
+        }
+        else if (you >= 8 || date >= 8) {
+            return 2;
+        }
+        else {
+            return 1;
+        }
+    }
+
+       public String fizzString2(int n) {
+        if (n%3 == 0 && n%5 == 0) {
+            return "FizzBuzz!";
+        }
+        else if (n%3 == 0) {
+            return "Fizz!";
+        }
+        else if (n%5 == 0) {
+            return "Buzz!";
+        }
+        else {
+            return n + "!";
+        }
+    }
+
+      public boolean sodaParty(int sodas, boolean isWeekend) {
+        if (isWeekend == true) {
+            if (sodas >= 40) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            if (sodas >= 40 && sodas <= 60) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+
 
     // ONLY EDIT ABOVE HERE-------------------------------------------------------------------------
 }
