@@ -1,9 +1,11 @@
 package src.main.java;
 
-public class Logic1 {
-    public static void main(String[] args) {
+
+public class Logic1
+{
+    public static void main(String[] args){
         Logic1 logicDriver = new Logic1();
-        // All test cases;
+        //All test cases;
         System.out.println(logicDriver.old35(3));
         System.out.println(logicDriver.old35(10));
         System.out.println(logicDriver.old35(15));
@@ -67,12 +69,15 @@ public class Logic1 {
         System.out.println(logicDriver.sodaParty(70, true));
     }
 
-    public Logic1() {
+    public Logic1()
+    {
+
     }
 
-    // ONLY EDIT BELOW HERE-------------------------------------------------------------------------
+    //ONLY EDIT BELOW HERE-------------------------------------------------------------------------
 
-      public boolean old35(int n) {
+
+    public boolean old35(int n) {
         if (n%3 == 0 && n%5 == 0) {
             return false;
         }
@@ -84,7 +89,9 @@ public class Logic1 {
         }
     }
 
-   public boolean specialEleven(int n) {
+
+
+    public boolean specialEleven(int n) {
         if (n%11 == 0 || n%11 == 1) {
             return true;
         }
@@ -93,7 +100,8 @@ public class Logic1 {
         }
     }
 
-     public boolean more20(int n) {
+
+    public boolean more20(int n) {
         if (n%20 == 1 || n%20 == 2) {
             return true;
         }
@@ -101,6 +109,8 @@ public class Logic1 {
             return false;
         }
     }
+
+
 
     public boolean less20(int n) {
         if (n%20 == 19 || n%20 == 18) {
@@ -111,7 +121,8 @@ public class Logic1 {
         }
     }
 
-   public boolean nearTen(int num) {
+
+    public boolean nearTen(int num) {
         if (num % 10 <= 2 || num % 10 >= 8) {
             return true;
         }
@@ -119,6 +130,8 @@ public class Logic1 {
             return false;
         }
     }
+
+
 
     public int sortaSum(int a, int b) {
         int sum = a + b;
@@ -128,7 +141,9 @@ public class Logic1 {
         return sum;
     }
 
-        public boolean in1To10(int n, boolean outsideMode) {
+
+
+    public boolean in1To10(int n, boolean outsideMode) {
         if (outsideMode == true) {
             if (n <= 1 || n >= 10) {
                 return true;
@@ -147,7 +162,9 @@ public class Logic1 {
         }
     }
 
-     public int teenSum(int a, int b) {
+
+
+    public int teenSum(int a, int b) {
         if ((a>=13 && a<=19) || (b>=13 && b<=19)) {
             return 19;
         }
@@ -156,7 +173,9 @@ public class Logic1 {
         }
     }
 
-     public boolean love6(int a, int b) {
+
+
+    public boolean love6(int a, int b) {
         if (a==6 || b==6 || (a+b)==6 || Math.abs(a-b)==6) {
             return true;
         }
@@ -166,7 +185,8 @@ public class Logic1 {
     }
 
 
-     public boolean lastDigit(int a, int b, int c) {
+
+    public boolean lastDigit(int a, int b, int c) {
         if (a%10 == b%10 || b%10 == c%10 || a%10 == c%10) {
             return true;
         }
@@ -175,7 +195,9 @@ public class Logic1 {
         }
     }
 
-       public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+
+
+    public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
         if ((isAsleep == true) || (isMorning == true && isMom == false)) {
             return false;
         }
@@ -184,7 +206,8 @@ public class Logic1 {
         }
     }
 
-       public String alarmClock(int day, boolean vacation) {
+
+    public String alarmClock(int day, boolean vacation) {
         if (vacation == true) {
             if (day == 0 || day == 6) {
                 return "off";
@@ -203,7 +226,9 @@ public class Logic1 {
         }
     }
 
-       public int teaParty(int tea, int candy) {
+
+
+    public int teaParty(int tea, int candy) {
         if (tea < 5 || candy < 5) {
             return 0;
         }
@@ -215,7 +240,9 @@ public class Logic1 {
         }
     }
 
-       public int redTicket(int a, int b, int c) {
+
+
+    public int redTicket(int a, int b, int c) {
         if (a==2 && b==2 && c==2) {
             return 10;
         }
@@ -230,7 +257,9 @@ public class Logic1 {
         }
     }
 
-       public int greenTicket(int a, int b, int c) {
+
+
+    public int greenTicket(int a, int b, int c) {
         if (a==b && b==c) {
             return 20;
         }
@@ -242,7 +271,9 @@ public class Logic1 {
         }
     }
 
-        public boolean squirrelPlay(int temp, boolean isSummer) {
+
+
+    public boolean squirrelPlay(int temp, boolean isSummer) {
         int upper = 90;
         if (isSummer == true) {
             upper = 100;
@@ -255,7 +286,9 @@ public class Logic1 {
         }
     }
 
-       public int caughtSpeeding(int speed, boolean isBirthday) {
+
+
+    public int caughtSpeeding(int speed, boolean isBirthday) {
         if (isBirthday == true) {
             speed -= 5;
         }
@@ -270,7 +303,9 @@ public class Logic1 {
         }
     }
 
-       public int dateFashion(int you, int date) {
+
+
+    public int dateFashion(int you, int date) {
         if (you <= 2 || date <= 2) {
             return 0;
         }
@@ -281,8 +316,10 @@ public class Logic1 {
             return 1;
         }
     }
+    
+    
 
-       public String fizzString2(int n) {
+    public String fizzString2(int n) {
         if (n%3 == 0 && n%5 == 0) {
             return "FizzBuzz!";
         }
@@ -297,7 +334,8 @@ public class Logic1 {
         }
     }
 
-      public boolean sodaParty(int sodas, boolean isWeekend) {
+
+    public boolean sodaParty(int sodas, boolean isWeekend) {
         if (isWeekend == true) {
             if (sodas >= 40) {
                 return true;
@@ -316,6 +354,4 @@ public class Logic1 {
         }
     }
 
-
-    // ONLY EDIT ABOVE HERE-------------------------------------------------------------------------
 }
